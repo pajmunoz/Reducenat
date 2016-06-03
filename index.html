@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>ReduceNat</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="" ng-app="myApp">
+    <!-- FACEBOOK -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+    <!-- FACEBOOK -->
+    <div class="preload">
+        <div class="ed-container cross-center" style="height: 100%">
+            <div class="ed-item abcenter">
+                <figure>
+                    <img src="img/logo.png" alt="">
+                </figure>
+                <svg>
+                    <circle cx="90" cy="90" r="50">
+                    </svg>
+                </div>
+            </div>
+        </div>
+    <!--
+    <div id="men-top">
+    <div class="icon-menu"></div>
+</div>
+-->
+
+<div id="menu">
+    <div class="ed-container">
+        <div class="ed-item menu no-padding">
+            <div class="ed-container menu-resp">
+                <div class="ed-item base-30 no-padding" style="position:relative;">
+                    <div class="circle hasta-web">
+                            <!--
+                            <div class="menu1">
+    <ul>
+        <li>
+            <a href="#"></a>
+        </li>
+        <li>
+            <a href="#"></a>
+        </li>
+        <li>
+            <a href="#"></a>
+        </li>
+        <li>
+            <a href="#"></a>
+        </li>
+    </ul>
+</div>
+-->
+</div>
+<div class="fb-like desde-web" data-href="https://www.facebook.com/MundoNaturalHoy?fref=ts" data-layout="button_count" style="position: absolute;bottom: 0%;right: 0;"></div>
+<figure class="logo-top"></figure>
+</div>
+<div class="ed-item base-20 web-20 hasta-web no-padding">
+    <div class="menu-ico-resp">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+                        <!--<div class="icon-menu">
+                            
+                    </div>-->
+                </div>
+                <div class="ed-item web-70 no-padding">
+                    <ul class="ed-container menu-top">
+                        <li class="ed-item"><a href="#tercera">PRODUCTO</a></li>
+                        <li class="ed-item"><a href="#cuarta">CÓMO FUNCIONA</a></li>
+                        <li class="ed-item"><a href="#quinta">TIPS</a></li>
+                        <li class="ed-item"><a href="#sexta">TESTIMONIOS</a></li>
+                        <li class="ed-item"><a href="#septima">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="primera">
+    <div class="ed-container" style="position:relative;">
+        <div class="ed-item barra hasta-web">
+            <p>Reduce Naturalmente la Ansiedad
+            </p>
+        </div>
+        <div class="ed-item text web-70 desde-web">
+            <p> Reduce
+                <br> Naturalmente
+                <br> la Ansiedad
+                <br> </p>
+                <p>100% Natural,
+                    <br> elimina la ansiedad,
+                    <br>calorías y grasas
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="segunda" class="">
+        <div class="ed-container cont-segunda">
+            <div class="ed-item no-padding">
+                <div class="ed-container form-segunda aparecer-arriba" ng-controller="formularioCtrl">
+                    <form action="form.php" class="ed-item form-1 abcenter " method="post" name="formularioTop" ng-submit="formularioTop.$valid">
+                        <div class="ed-container">
+                            <div class="ed-item centro">
+                                <div class="btn-llamar"></div>
+                            </div>
+                            <div class="ed-item">
+                                <div class="input">
+                                    <input type="text" name="nombre" ng-model="formData.nombre" placeholder="Nombre y Apellido" ng-minlength="2" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.nombre.$error.minlength">Tu Nombre es requerido</span>
+                                </div>
+                            </div>
+                            <div class="ed-item">
+                                <div class="input">
+                                    <input type="email" name="email" ng-model="formData.email" placeholder="E-mail" ng-pattern="/^([0-9a-zA-Z_]([-.\w]*[0-9a-zA-Z_.-])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/" required>
+                                    <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.email.$error.pattern">Colocá un mail válido</span>
+                                </div>
+                            </div>
+                            <div name="code" class="ed-item web-40">
+                                <div class="input">
+                                    <input type="number" name="cod" ng-model="formData.cod" ng-maxlength="5" ng-minlength="2" placeholder="Cod. Área" required/>
+                                    <span name="cod1" class="showMe" ng-if="formularioTop.$dirty && formularioTop.cod.$error.minlength">El código es muy corto</span>
+                                </div>
+                            </div>
+                            <div name="numero" class="ed-item web-60">
+                                <div class="input">
+                                    <input type="number" name="telefono" ng-model="formData.telefono" ng-minlength="6" placeholder="Teléfono" required/>
+                                    <span name="num" class="showMe" ng-if="formularioTop.$dirty && formularioTop.telefono.$error.minlength">Colocá un teléfono válido</span>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="ed-item item-sexo">
+                                <div class="input">
+                                    <div class="ed-container">
+                                        <div class="ed-item base-10 no-padding">
+                                            <span>Sexo</span>
+                                        </div>
+                                        <div class="ed-item base-50"></div>
+                                        <div class="ed-item base-40 no-padding input-sexo">
+                                            M
+                                            <input type="radio" name="opcion" value="M" ng-model="formData.checkbox" required=""> F
+                                            <input type="radio" name="opcion" value="F" ng-model="formData.checkbox">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        -->
+
+                        <div class="ed-item">
+                            <div class="input">
+                                <input id="submit" class="btn-sub1" type="submit" value="COMENZAR MI PLAN" ng-disabled="formularioTop.$invalid">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="ed-item llamanos">
+                    <div class="ed-container">
+                        <div class="ed-item llama-top">
+                            <p data-tel="5275-7606">LLAMANOS HOY AL
+                                <br> <span>(011)</span><strong>5275-7606</strong> </p>
+                            </div>
+                            <div class="ed-item consulta-top">
+                                <div class="ed-container">
+                                    <div class="ed-item base-10 hasta-web no-padding">
+                                        <figure class="ico-candado "><img src="img/candado-02.png" alt=""></figure>
+                                    </div>
+                                    <div class="ed-item base-80 web-100">
+                                        <p>HACÉ TU CONSULTA
+                                            <br>CON NUESTRO ASESOR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ed-item jamas hasta-web">
+                                    <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ed-item jamas desde-web">
+                            <div class="ed-container">
+                                <div class="ed-item web-15 no-padding">
+                                    <figure class="ico-candado "><img src="img/candado-02.png" alt=""></figure>
+                                </div>
+                                <div class="ed-item web-85">
+                                    <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tercera">
+            <div class="ed-container cross-center cont-3">
+                <div class="ed-item">
+                    <div class="ed-container">
+                        <div class="ed-item logo hasta-web">
+                            <figure class="img"><img src="img/logo.png" alt=""></figure>
+                        </div>
+                        <div class="ed-item foto hasta-web">
+                            <figure class="foto-img"><img src="img/img-03.png" alt=""></figure>
+                        </div>
+                        <div class="ed-item txt hasta-web">
+                            <p><span>ReduceNat®</span> no produce efecto rebote porque es obtenido a partir de sustancias de origen natural, ¡cortá hoy mismo el círculo vicioso de la ansiedad!</p>
+                        </div>
+                        <div class="ed-item txt-web web-60 no-padding desde-web">
+                            <h1>¿TRASTORNO DE LA ANSIEDAD? ¿HAMBRE INSACIABLE? ¿PROBLEMAS PARA BAJAR DE PESO?</h1>
+                            <p>La ansiedad surge inesperadamente, puede aparecer de diferentes modos según el contexto y se convierte en un obstáculo para bajar de peso. Por este motivo, hemos desarrollado <strong>ReduceNat®</strong>, un <strong>producto único</strong> en el mercado que <strong>reduce naturalmente los niveles de ansiedad</strong> para alcanzar una estabilidad alimentaria.
+                            </p>
+                            <p>ReduceNat es tu mejor aliado para controlar la ansiedad:
+                                <br> ¡Si la ansiedad te hace comer de todo, <span>ReduceNat®</span> es para vos!
+                            </p>
+                        </div>
+                        <div class="ed-item web-50 green-box centro desde-web aparecer-arriba">
+                            <p>Envío a domicilio ¡Estés donde estés!</p>
+                            <p><i>OBTENÉ 15 DÍAS GRATIS CON TU COMPRA ONLINE</i></p>
+                        </div>
+                        <div class="ed-item web-40 no-padding desde-web "></div>
+                    </div>
+                </div>
+                <div class="ed-item base-90 green-box centro hasta-web aparecer-arriba">
+                    <p>Envío a domicilio ¡Estés donde estés!</p>
+                    <p><i>OBTENÉ 15 DÍAS GRATIS CON TU COMPRA ONLINE</i></p>
+                </div>
+            </div>
+        </div>
+        <div id="cuarta">
+            <div class="ed-container cross-center cont-4">
+                <div class="ed-item tit hasta-web">
+                    <p>COMPONENTES NATURALES</p>
+                </div>
+                <div class="ed-item tit-2 desde-web">
+                    <p><span>ReduceNat®</span> es hecho a partir de sustancias de origen natural, olvídate de costosas pastillas con anfetaminas, de tratamientos largos que no dan resultados efectivos y de cirugías que ponen en riesgo tu integridad física.</p>
+                </div>
+                <div class="ed-item sub-tit desde-web">
+                    <p>¡Con ReduceNat cortá hoy mismo el círculo vicioso de la ansiedad!</p>
+                </div>
+                <div class="ed-item web-10"></div>
+                <div class="ed-item lista web-50">
+                    <p class="desde-web web-30">Componentes Naturales:</p>
+                    <p><span>&#8226; </span><strong> Ginseng:</strong> combate la depresión y reduce el estrés.</p>
+                    <p><span>&#8226; </span><strong> Onagra:</strong> aporta ácidos grasos esenciales para el correcto funcionamiento del sistema nervioso.</p>
+                    <p><span>&#8226; </span><strong> Café Verde:</strong> brinda efecto saciante para que no estés con antojos todo el tiempo. </p>
+                </div>
+                <div class="ed-item web-5"></div>
+                <div class="ed-item foto web-30">
+                    <figure class="img"><img src="img/pack2.png" alt=""></figure>
+                </div>
+                <div class="ed-item web-5"></div>
+                <div class="ed-item web-50 blue-box centro desde-web aparecer-arriba">
+                    <p>Envío a domicilio ¡Estés donde estés!</p>
+                    <p><i>OFERTA ONLINE ÚNICAMENTE</i></p>
+                </div>
+            </div>
+        </div>
+        <div id="quinta">
+            <div class="ed-container cross-center cont-5">
+                <div class="ed-item foto web-40">
+                    <figure class="img"><img src="img/img-02.png" alt=""></figure>
+                </div>
+                <div class="ed-item web-55 no-padding aparecer-arriba">
+                    <div class="ed-container">
+                        <div class="ed-item tit">
+                            <p>Para Comenzar el tratamiento ReduceNat es necesario:</p>
+                        </div>
+                        <div class="ed-item lista">
+                            <ol>
+                                <li>
+                                    <p><span>Aceptá  la ansiedad:</span> es el primer paso, es algo dañino y tiene que terminarse.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span>Mentalizate que la ansiedad llega a su fin: </span> Contale a tus conocidos que comenzás el tratamiento ReduceNat, escuchar frases positivas cuando lo necesites va a ser bueno.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span>Incluí ejercitación:</span> Salí a caminar, mirar vidrieras, una excusa para calentar un poco la sangre a diario y mejorar la respiración.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span>Reservá un tiempo para vos:</span> Date un gustito de vez en cuando, premia tus logros, no confundas cuidarte con castigarte.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><span>Tomá a diario ReduceNat:</span> 2 cucharadas de ReduceNat en un litro de agua van a aportarte naturalmente todo lo que necesitás para noquear la ansiedad.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sexta">
+            <div class="ed-container cross-center cont-6">
+                <div class="ed-item tit hasta-web">
+                    <p>TESTIMONIOS</p>
+                </div>
+                <div class="ed-item item1 no-padding">
+                    <div class="ed-container">
+                        <div class="ed-item web-5"></div>
+                        <div class="ed-item foto web-25">
+                            <figure class="img">
+                                <img src="img/img-05.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="ed-item txt cross-center web-65">
+                            <div class="ed-container">
+                                <div class="ed-item">
+                                    <span>Natalia
+                                        <br class="hasta-web">26 años.
+                                        <br class="hasta-web">
+                                    </span>
+                                </div>
+                                <div class="ed-item">
+                                    <p>¨Siempre me preocupó mi silueta, vi este producto y me convenció que el tratamiento era totalmente natural. No requiere dejar de comer o someterse a tratamientos peligrosos. ¡Hoy se lo recomiendo a todas mis amigas!¨.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ed-item web-5"></div>
+                    </div>
+                </div>
+                <div class="ed-item item2 no-padding desde-web">
+                    <div class="ed-container" style="flex-direction:row-reverse;">
+                        <div class="ed-item web-5"></div>
+                        <div class="ed-item foto web-25">
+                            <figure class="img">
+                                <img style="position: absolute;top: -75px;left: -10%;" src="img/img-01.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="ed-item txt cross-center web-65">
+                            <div class="ed-container">
+                                <div class="ed-item">
+                                    <span>Micaela
+                                        <br class="hasta-web">32 años.
+                                        <br class="hasta-web">
+                                        <span>
+                                        </div>
+                                        <div class="ed-item">
+                                            <p>¨Estaba dispuesta a todo para dejar de ser gordita, encargué el producto y ya hace un mes que lo estoy utilizando, me ayuda bajar de peso de forma natural y paulativamente¨.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ed-item web-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="septima" class="">
+                    <div class="ed-container">
+                        <div class="ed-item bg-end no-padding">
+                            <div class="ed-container" ng-controller="formularioCtrl">
+                             <div class="ed-item cont-left web-65 desde-web">
+                                 <div class="ed-container">
+                                     <div class="ed-item txt">
+                                         <p> Reduce <br> Naturalmente <br> la Ansiedad <br> </p>
+                                         <figure><img src="img/pack2.png" alt="">
+                                             <div class="fb-like desde-web" data-href="https://www.facebook.com/MundoNaturalHoy?fref=ts" data-layout="button_count" style="position: absolute;bottom: 0%;right: 30%;"></div></figure>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="ed-item web-30 no-padding">
+                                    <div class="ed-container">
+                                        <div class="ed-item no-padding">
+                                            <form action="form.php" class="ed-item aparecer-arriba no-padding form-2 abcenter" method="post" name="formularioTop" ng-submit="formularioTop.$valid">
+                                                <div class="ed-container">
+                                                    <div class="ed-item llama-bot">
+                                                        <p>LLAMANOS HOY AL
+                                                            <br><span class="icon-telefono"></span><span>(011)</span>5275-7606 </p>
+                                                        </div>
+                                                        <div class="ed-item form-bg no-padding">
+                                                            <div class="ed-container">
+                                                                <div class="ed-item consulta">
+                                                                    <p>HACÉ TU CONSULTA
+                                                                        <br> CON NUESTRO ASESOR</p>
+                                                                    </div>
+                                                                    <div class="ed-item no-padding">
+                                                                        <div class="ed-container">
+                                                                            <div class="ed-item">
+                                                                                <div class="ed-container">
+                                                                                    <div class="ed-item centro">
+                                                                                        <div class="btn-llamar centro hasta-web"></div>
+                                                                                    </div>
+                                                                                    <div name="nam" class="ed-item">
+                                                                                        <div class="input">
+                                                                                            <input type="text" name="nombre" ng-model="formData.nombre" placeholder="Nombre y Apellido" ng-minlength="2" required>
+                                                                                            <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.nombre.$error.minlength">Tu Nombre es requerido</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div name="mai" class="ed-item">
+                                                                                        <div class="input">
+                                                                                            <input type="email" name="email" ng-model="formData.email" placeholder="E-mail" ng-pattern="/^([0-9a-zA-Z_]([-.\w]*[0-9a-zA-Z_.-])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/" required>
+                                                                                            <span class="showMe" ng-if="formularioTop.$dirty && formularioTop.email.$error.pattern">Colocá un mail válido</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div name="n1" class="ed-item web-40">
+                                                                                        <div class="input">
+                                                                                            <input type="number" name="cod" ng-model="formData.cod" ng-maxlength="5" ng-minlength="2" placeholder="Cod. Área" required/>
+                                                                                            <span name="cod1" class="showMe" ng-if="formularioTop.$dirty && formularioTop.cod.$error.minlength">El código es muy corto</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div name="tlf" class="ed-item web-60">
+                                                                                        <div class="input">
+                                                                                            <input type="number" name="telefono" ng-model="formData.telefono" ng-minlength="6" placeholder="Teléfono" required/>
+                                                                                            <span name="num" class="showMe" ng-if="formularioTop.$dirty && formularioTop.telefono.$error.minlength">Colocá un teléfono válido</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                    <!--
+                                                    <div class="ed-item item-sexo">
+                                                        <div class="input">
+                                                            <div class="ed-container">
+                                                                <div class="ed-item base-10 web-15 no-padding">
+                                                                    <span>Sexo</span>
+                                                                </div>
+                                                                <div class="ed-item base-50 web-30 no-padding"></div>
+                                                                <div class="ed-item base-40 web-30 no-padding input-sexo">
+                                                                    M
+                                                                    <input type="radio" name="opcion" value="M" ng-model="formData.checkbox" required=""> F
+                                                                    <input type="radio" name="opcion" value="F" ng-model="formData.checkbox">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                -->
+                                            </div>
+                                        </div>
+                                        <div class="ed-item bg-white">
+                                            <div class="ed-container">
+                                                <div class="ed-item jamas hasta-web">
+                                                    <div class="ed-container">
+                                                        <div class="ed-item base-15 no-padding">
+                                                            <figure class="ico-candado desde-web"><img src="img/candado-01.png" alt=""></figure>
+                                                            <figure class="ico-candado hasta-web"><img src="img/candado-02.png" alt=""></figure>
+                                                        </div>
+                                                        <div class="ed-item base-85 no-padding">
+                                                            <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ed-item">
+                                                    <input id="submit" class="btn-sub1" type="submit" value="MÁS INFO" ng-disabled="formularioTop.$invalid">
+                                                </div>
+                                                <div class="ed-item hasta-web">
+                                                    <figure class="pack"><img src="img/pack.png" alt=""></figure>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="ed-item jamas desde-web">
+                    <div class="ed-container">
+                        <div class="ed-item web-15 no-padding">
+                            <figure class="ico-candado desde-web"><img src="img/candado-02.png" alt=""></figure>
+                            <figure class="ico-candado hasta-web"><img src="img/canda.png" alt=""></figure>
+                        </div>
+                        <div class="ed-item web-85 no-padding">
+                            <p>Jamás compartiremos tu información personal con nadie, sólo la utilizaremos para responder tu consulta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div id="top" style="display: -webkit-flex;">
+    <span class="icon-arriba"></span>
+</div>
+<div id="footer" class="">
+    <div class="ed-container">
+        <div class="ed-item cross-center desde-web web-25 no-padding">
+            <figure class="logo-img"></figure>
+        </div>
+        <div class="ed-item web-75 no-padding">
+            <div class="ed-container">
+                <div class="ed-item foot-1">
+                    <p><strong>Suplementa dietas insuficientes. Ante cualquier duda consultá a tu médico y/o farmacéutico.</strong> No es un medicamento. *Según encuestas privadas de autoevaluación. Las imágenes fueron retocadas y/o modificadas digitalmente.</p>
+                </div>
+                <div class="ed-item foot-2 desde-web">
+                    <div class="ed-container cont">
+                        <div class="ed-item web-35 no-padding">
+                            <p><a href="politicasdeprivacidad.html">TÉRMINOS, CONDICIONES Y POLÍTICAS DE PRIVACIDAD.</a></p>
+                        </div>
+                        <div class="ed-item web-30 no-padding">
+                            <p>Reducenat Copyright © 2016 - All Rights Reserved.</p>
+                        </div>
+                        <div class="ed-item web-30 no-padding">
+                            <p>Todos los derechos reservados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ed-item foot-3 hasta-web">
+                    <p><a href="politicasdeprivacidad.html">TÉRMINOS, CONDICIONES Y POLÍTICAS DE PRIVACIDAD.</a> Reducenat Copyright © 2016 - All Rights Reserved.Todos los derechos reservados. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/script.js"></script>
+<script src=js/app.js></script>
+</body>
+
+</html>
